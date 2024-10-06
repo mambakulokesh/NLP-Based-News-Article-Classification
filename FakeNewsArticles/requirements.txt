@@ -1,0 +1,8 @@
+jupyter
+pandas
+sklearn==0.0
+nltk
+matplotlib
+flask
+flask_wtf
+joblib
