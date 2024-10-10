@@ -19,14 +19,14 @@ def home():
         index = randrange(0, len(data)-1, 1)
         original_text = data.loc[index].text
         form.original_text.data = str(original_text)
-        return render_template('index.html', form=form, output=False)
+        return render_template('home.html', form=form, output=False)
 
     elif form.predict.data:
         if len(str(form.original_text.data)) > 10:
             model = PredictionModel(form.original_text.data)
-            return render_template('index.html', form=form, output=model.predict())
+            return render_template('home.html', form=form, output=model.predict())
 
-    return render_template('index.html', form=form, output=False)
+    return render_template('home.html', form=form, output=False)
 
 
 @app.route('/predict/<original_text>', methods=['POST', 'GET'])
